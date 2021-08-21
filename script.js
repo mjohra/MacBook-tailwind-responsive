@@ -14,13 +14,13 @@ const total = document.getElementById("total");
 const shippingTotal = document.getElementById("shipping");
 const price = document.getElementById("price");
 const promoCode = document.getElementById("code");
-
+// function for updating cost
 function update(cost, element) {
   const productField = document.getElementById(element);
   productField.innerText = cost;
   updateTotal();
 }
-
+//button click event handler
 free.addEventListener("click", function () {
   update(0, "memory");
 });
@@ -64,7 +64,7 @@ function applyPromoCode() {
   const shippingTotal = document.getElementById("shipping");
   const promoCode = document.getElementById("code").value;
   if (promoCode == "stevekaku") {
-    const currentTotal = discount - (discount * 0.2);
+    const currentTotal = discount - discount * 0.2;
     document.getElementById("code").value = "";
     shippingTotal.innerText = currentTotal;
   } else {
